@@ -10,10 +10,10 @@ class Employee {
         return this.name;
     }
     getId() {
-        return this.id
+        return this.id;
     }
     getEmail() {
-        return this.email
+        return this.email;
     }
     getRole() {
         return "Employee";
