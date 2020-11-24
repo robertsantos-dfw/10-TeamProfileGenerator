@@ -29,7 +29,7 @@ This application is simple, clean, easy to use and undertand. After cloning, ins
 
 ## Video
 
-[![](develop/assets/youtube.png)](https://youtu.be/UE4TTtjjDHM "ReadMe Generator")
+[![](.develop/assets/youtube.png)](https://youtu.be/UE4TTtjjDHM "ReadMe Generator")
 
 
 ## Tests
@@ -47,13 +47,13 @@ You can reach me by emailing me at robertsantos.dfw@gmail.com with any additiona
 ## Screenshots
 
 * Getting Started
-![Getting Started](develop/assets/screenshot01.png)
+![Getting Started](.develop/assets/screenshot01.png)
 
 * Answer Questions
-![Answer Questions](develop/assets/screenshot02.png)
+![Answer Questions](.develop/assets/screenshot02.png)
 
 * Preview ReadMe File
-![Preview HTML File](develop/assets/screenshot03.png)
+![Preview HTML File](.develop/assets/screenshot03.png)
 
 ---
 © 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
