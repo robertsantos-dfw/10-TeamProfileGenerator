@@ -35,11 +35,46 @@ async function askquestions() {
         {
             type: "list",
             name: "role",
-            message: "Select the employee's role?",
-            choices: ["Manager", "Engineer", "Intern"]
+            message: "What is the employee's role?",
+            choices: ["Intern", "Engineer", "Manager"]
         }
     ]);
+    switch (res.role) {
+        case "Intern":
+            const school = await inquirer.prompt([{
+                type: "input",
+                name: "schoolnanme",
+                message: "Which school did the Intern attend?"
+            }]);
+            employees.push(
+                new Intern(res.name, res.id, res.email, school.schoolName)
+            );
+            addAnotherEmployee();
+            break;
+        case "Intern":
+            const school = await inquirer.prompt([{
+                type: "input",
+                name: "schoolnanme",
+                message: "Which school did the Intern attend?"
+            }]);
+            employees.push(
+                new Intern(res.name, res.id, res.email, school.schoolName)
+            );
+            addAnotherEmployee();
+            break;
+        case "Intern":
+            const school = await inquirer.prompt([{
+                type: "input",
+                name: "schoolnanme",
+                message: "Which school did the Intern attend?"
+            }]);
+            employees.push(
+                new Intern(res.name, res.id, res.email, school.schoolName)
+            );
+            addAnotherEmployee();
+            break;
 
+    }
 }
 
 
