@@ -54,7 +54,7 @@ There are 4 test packages to ensure that the code defines and exports the Employ
 
 ![Answer Questions](/Develop/assets/screenshot02.png)
 
-* Preview ReadMe File
+* Preview Team.html File
 
 ![Preview HTML File](/Develop/assets/screenshot03.png)
 
