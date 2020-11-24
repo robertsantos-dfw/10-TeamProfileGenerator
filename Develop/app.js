@@ -43,7 +43,7 @@ async function askquestions() {
         case "Intern":
             const school = await inquirer.prompt([{
                 type: "input",
-                name: "schoolnanme",
+                name: "schoolNanme",
                 message: "Which school did the Intern attend?"
             }]);
             employees.push(
@@ -51,37 +51,55 @@ async function askquestions() {
             );
             addAnotherEmployee();
             break;
-        case "Intern":
-            const school = await inquirer.prompt([{
+        case "Engineer":
+            const gitHub = await inquirer.prompt([{
                 type: "input",
-                name: "schoolnanme",
-                message: "Which school did the Intern attend?"
+                name: "gitHubUserName",
+                message: "What is the engineer's github username?"
             }]);
             employees.push(
-                new Intern(res.name, res.id, res.email, school.schoolName)
+                new Engineer(res.name, res.id, res.email, gitHub.gitHubUserName)
             );
             addAnotherEmployee();
             break;
-        case "Intern":
-            const school = await inquirer.prompt([{
+        case "Manager":
+            const phone = await inquirer.prompt([{
                 type: "input",
-                name: "schoolnanme",
-                message: "Which school did the Intern attend?"
+                name: "officeNumber",
+                message: "What is the manager's office number?"
             }]);
             employees.push(
-                new Intern(res.name, res.id, res.email, school.schoolName)
+                new Manager(res.name, res.id, res.email, phone.officeNumber)
             );
             addAnotherEmployee();
             break;
-
+        default:
     }
 }
 
+askquestions();
+
+async function addAnotherEmployee() {
+    const addMoreEmployee = await inquirer.prompt([{
+        type: "confirm",
+        name: "addAgain",
+        message: "Do you want to add another employee?"
+    }]);
+    addMoreEmployee.addAgain == true ? askquestions() : buildTeam(employees);
+}
 
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
+
+function buildTeam(employees) {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+        fs.mkdirSync(OUTPUT_DIR);
+    }
+    fs.writeFileSync(outputPath, render(employees), "utf-8");
+}
+
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the
