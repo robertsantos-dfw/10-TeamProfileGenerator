@@ -10,37 +10,37 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-
+const employees = []
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-inquirer
-    .prompt([{
-            type: 'input',
-            name: 'name',
-            message: 'What is your name?',
+async function askquestions() {
+    const res = await inquirer.prompt([{
+            type: "input",
+            name: "name",
+            message: "What is the employee's name?"
         },
         {
-            type: 'checkbox',
-            message: 'What languages do you know?',
-            name: 'stack',
-            choices: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
+            type: "input",
+            name: "id",
+            message: "What is the employee's id?"
         },
         {
-            type: 'list',
-            message: 'What is your preferred method of communication?',
-            name: 'contact',
-            choices: ['email', 'phone', 'telekinesis'],
+            type: "input",
+            name: "email",
+            message: "What is the employee's email address?"
         },
-    ])
-    .then((data) => {
-        const filename = `${data.name.toLowerCase().split(' ').join('')}.json`;
+        {
+            type: "list",
+            name: "role",
+            message: "Select the employee's role?",
+            choices: ["Manager", "Engineer", "Intern"]
+        }
+    ]);
 
-        fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-            err ? console.log(err) : console.log('Success!')
-        );
-    });
+}
+
 
 
 // After the user has input all employees desired, call the `render` function (required
