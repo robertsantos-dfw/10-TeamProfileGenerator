@@ -43,11 +43,11 @@ async function askquestions() {
         case "Intern":
             const school = await inquirer.prompt([{
                 type: "input",
-                name: "schoolNanme",
+                name: "school",
                 message: "Which school did the Intern attend?"
             }]);
             employees.push(
-                new Intern(res.name, res.id, res.email, school.schoolName)
+                new Intern(res.name, res.id, res.email, school.school)
             );
             addAnotherEmployee();
             break;
